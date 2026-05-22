@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Teko:wght@700;900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Configurações (fontes, cores, etc.) ... */
+  --color-cyber-bg: #09090e;
+  --color-cyber-room: #0d0d13;
+  --color-neon-cyan: #00f3ff;
+  --color-neon-pink: #ff007f;
+
+  /* NOVAS FONTES "ALTAS" E "DIGITAIS" CIBERNÉTICAS */
+  --font-cyber-tall: "Teko", sans-serif; /* Extremamente alta e condensada */
+  --font-cyber-terminal:
+    "Cutive Mono", monospace; /* Segmentada, esticada e virtual */
+
+  /* MOTOR DE ANIMAÇÃO DO TAILWIND V4 */
+  /* Usamos linear e infinite para o movimento ser contínuo e sem paradas */
+  --animate-cloud-scroll-slow: cloud-scroll 60s linear infinite;
+  --animate-cloud-scroll-fast: cloud-scroll 35s linear infinite;
+  --animate-flicker: flicker 3s infinite ease-in-out;
+  --animate-pulse-slow: pulse-slow 4s infinite ease-in-out;
+
+  /* ⚡ ANIMAÇÃO DE LETREIRO QUEIMANDO (CURTO-CIRCUITO) */
+  --animate-glitch-flicker: natural-flicker 8s infinite ease-in-out;
+
+  @keyframes natural-flicker {
+    /* 0% até 75%: O letreiro fica 100% aceso, firme e imponente */
+    0%,
+    75% {
+      opacity: 1;
+      filter: drop-shadow(0 0 8px #00f3ff) drop-shadow(0 0 15px #00f3ff);
+    }
+
+    /* 76%: Uma queda rápida e sutil de tensão (fraqueja mas não apaga) */
+    76% {
+      opacity: 0.6;
+      filter: drop-shadow(0 0 3px #00f3ff);
+    }
+
+    /* 77% a 79%: Volta a acender firme */
+    77%,
+    79% {
+      opacity: 1;
+      filter: drop-shadow(0 0 8px #00f3ff) drop-shadow(0 0 15px #00f3ff);
+    }
+
+    /* 80%: Um "estalo" mais seco (cai para 30% do brilho) */
+    80% {
+      opacity: 0.3;
+      filter: drop-shadow(0 0 1px #00f3ff);
+    }
+
+    /* 81%: Recuperação imediata */
+    81% {
+      opacity: 1;
+      filter: drop-shadow(0 0 8px #00f3ff) drop-shadow(0 0 15px #00f3ff);
+    }
+
+    /* 82% a 83%: Outra oscilação rápida seguida de estabilização */
+    82% {
+      opacity: 0.5;
+      filter: drop-shadow(0 0 2px #00f3ff);
+    }
+
+    /* 84% até 100%: Volta a ficar 100% aceso até reiniciar o ciclo */
+    84%,
+    100% {
+      opacity: 1;
+      filter: drop-shadow(0 0 8px #00f3ff) drop-shadow(0 0 15px #00f3ff);
+    }
+  }
+}
