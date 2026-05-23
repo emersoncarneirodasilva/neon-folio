@@ -3,7 +3,7 @@ interface NeonBuildingLightsProps {
 }
 
 export default function NeonBuildingLights({ hour }: NeonBuildingLightsProps) {
-  // Opcional: Desativa ou diminui os glows intensos durante o dia claro (entre 5h e 16h)
+  // Opcional: Desativa ou diminui os glows intensos durante o dia claro (entre 5h e 18h)
   const isDaytime = hour >= 5 && hour < 18;
   if (isDaytime) return null;
 
@@ -222,30 +222,6 @@ export default function NeonBuildingLights({ hour }: NeonBuildingLightsProps) {
           borderRadius: "50%",
         }}
       />
-
-      {/* GLOW ROSA (Prédio com Letreiro Vertical Rosa na Direita) */}
-      {/* <div
-        className="neon-layer bg-pink-600/50 blur-[35px] animate-neon-flicker-intense"
-        style={{
-          mixBlendMode: "screen",
-          borderRadius: "50%",
-          left: "63.5%",
-          top: "12%",
-          width: "4%",
-          height: "22%",
-        }}
-      /> */}
-      {/* <div
-        className="neon-layer bg-red-600/40 blur-[15px] animate-[pulse_2s_infinite]"
-        style={{
-          mixBlendMode: "screen",
-          left: "52.8%",
-          top: "9.5%",
-          width: "2%",
-          height: "2%",
-          borderRadius: "50%",
-        }}
-      /> */}
 
       {/* 🛠️ ESTILOS ANIMADOS (Injetados localmente com escopo limpo) */}
       <style>{`

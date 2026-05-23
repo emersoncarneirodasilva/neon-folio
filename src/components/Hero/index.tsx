@@ -1,7 +1,7 @@
-import bgHeroSunrise from "../../assets/bg-hero-sunrise.webp";
-import bgHeroDay from "../../assets/bg-hero-day.webp";
-import bgHeroSunset from "../../assets/bg-hero-sunset.webp";
-import bgHeroNight from "../../assets/bg-hero-night.webp";
+import bgHeroSunrise from "../../assets/home-image/bg-hero-sunrise.webp";
+import bgHeroDay from "../../assets/home-image/bg-hero-day.webp";
+import bgHeroSunset from "../../assets/home-image/bg-hero-sunset.webp";
+import bgHeroNight from "../../assets/home-image/bg-hero-night.webp";
 import Billboard from "./Billboard";
 import Rain from "./Rain";
 import Sky from "./Sky";
@@ -17,17 +17,12 @@ interface HeroProps {
 }
 
 export default function Hero({ hour, isRaining, rainIntensity }: HeroProps) {
-  let bgHero = bgHeroNight;
-
-  if (hour >= 5 && hour < 7) {
-    bgHero = bgHeroSunrise;
-  } else if (hour >= 7 && hour < 16) {
-    bgHero = bgHeroDay;
-  } else if (hour >= 16 && hour < 18) {
-    bgHero = bgHeroSunset;
-  } else {
-    bgHero = bgHeroNight;
-  }
+  const bgHero = () => {
+    if (hour >= 5 && hour < 7) return bgHeroSunrise;
+    if (hour >= 7 && hour < 16) return bgHeroDay;
+    if (hour >= 16 && hour < 18) return bgHeroSunset;
+    return bgHeroNight;
+  };
 
   return (
     <section className="relative w-full overflow-hidden flex flex-col items-center bg-black">
@@ -47,7 +42,7 @@ export default function Hero({ hour, isRaining, rainIntensity }: HeroProps) {
         {/* Isto obriga o contêiner de elementos críticos a travar a sua largura em 970px assim que a tela baixar desse valor */}
         <div className="relative max-[970px]:min-w-242.5 w-full h-auto flex items-end">
           <img
-            src={bgHero}
+            src={bgHero()}
             alt="Cyberpunk Rooftop City"
             className="w-full h-auto block pointer-events-none select-none relative z-10"
             style={{ imageRendering: "pixelated" }}
@@ -58,7 +53,6 @@ export default function Hero({ hour, isRaining, rainIntensity }: HeroProps) {
           <Billboard />
         </div>
 
-        {/* Clima de Chuva */}
         {isRaining && <Rain intensity={rainIntensity} />}
       </div>
     </section>
