@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import Hero from "./components/Hero";
-import Workspace from "./components/workspace";
+import Workspace from "./components/Workspace";
 
 type RainIntensity = "low" | "medium" | "storm";
 
