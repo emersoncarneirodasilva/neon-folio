@@ -1,12 +1,15 @@
-import bgWorkspace from "../../assets/workspace-image/bg-workspace.webp";
+import bgWorkspaceSunrise from "../../assets/workspace-image/bg-workspace-sunrise.webp";
+import bgWorkspaceDay from "../../assets/workspace-image/bg-workspace-day.webp";
+import bgWorkspaceSunset from "../../assets/workspace-image/bg-workspace-sunset.webp";
+import bgWorkspaceNight from "../../assets/workspace-image/bg-workspace-night.webp";
 import cityInDay from "../../assets/workspace-image/city-in-window-day.webp";
 import cityInSunrise from "../../assets/workspace-image/city-in-window-sunrise.webp";
 import cityInSunset from "../../assets/workspace-image/city-in-window-sunset.webp";
 import cityInNight from "../../assets/workspace-image/city-in-window-night.webp";
 import { AeroLayer } from "../Hero/AeroLayer";
+import Sky from "../Hero/Sky";
 import Clouds from "../Hero/Clouds";
 import Rain from "../Hero/Rain";
-import Sky from "../Hero/Sky";
 import NeonBuildingLightsCityWindow from "./NeonBuildingLightsCityWindow";
 
 interface WorkspaceProps {
@@ -15,18 +18,29 @@ interface WorkspaceProps {
   rainIntensity: "low" | "medium" | "storm";
 }
 
+// 1. Configuração centralizada fora do componente
+const THEME_CONFIG = {
+  sunrise: { workspace: bgWorkspaceSunrise, city: cityInSunrise },
+  day: { workspace: bgWorkspaceDay, city: cityInDay },
+  sunset: { workspace: bgWorkspaceSunset, city: cityInSunset },
+  night: { workspace: bgWorkspaceNight, city: cityInNight },
+};
+
 export default function Workspace({
   hour,
   isRaining,
   rainIntensity,
 }: WorkspaceProps) {
-  // Lógica para selecionar a imagem da cidade conforme o horário
-  const getCityImage = () => {
-    if (hour >= 5 && hour < 7) return cityInSunrise;
-    if (hour >= 7 && hour < 16) return cityInDay;
-    if (hour >= 16 && hour < 18) return cityInSunset;
-    return cityInNight;
+  // 2. Função única para decidir o tema
+  const getTheme = () => {
+    if (hour >= 5 && hour < 7) return THEME_CONFIG.sunrise;
+    if (hour >= 7 && hour < 16) return THEME_CONFIG.day;
+    if (hour >= 16 && hour < 18) return THEME_CONFIG.sunset;
+    return THEME_CONFIG.night;
   };
+
+  // 3. Extração dos valores (aqui estão as variáveis 'workspace' e 'city' que você deve usar abaixo)
+  const { workspace, city } = getTheme();
 
   return (
     <section
@@ -57,21 +71,22 @@ export default function Workspace({
           <AeroLayer hour={hour} />
           <Clouds hour={hour} isRaining={isRaining} />
 
-          {/* Cidade Dinâmica aplicada aqui */}
+          {/* Cidade Dinâmica: usando a variável 'city' */}
           <img
-            src={getCityImage()}
+            src={city}
             alt="Cityscape"
-            className="absolute bottom-0 left-0 w-full object-cover z-10 pointer-events-none transition-opacity duration-1000"
+            className="absolute bottom-0 left-0 w-full object-cover z-10 pointer-events-none transition-opacity duration-1000 ease-in-out"
             style={{ imageRendering: "pixelated" }}
           />
 
           {isRaining && <Rain intensity={rainIntensity} />}
         </div>
 
+        {/* Quarto Dinâmico: usando a variável 'workspace' */}
         <img
-          src={bgWorkspace}
+          src={workspace}
           alt="Workspace Background"
-          className="relative w-full h-full object-cover select-none pointer-events-none"
+          className="relative w-full h-full object-cover select-none pointer-events-none transition-opacity duration-1000 ease-in-out"
           style={{ zIndex: 1 }}
         />
 
