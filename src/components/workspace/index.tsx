@@ -11,6 +11,7 @@ import Sky from "../Hero/Sky";
 import Clouds from "../Hero/Clouds";
 import Rain from "../Hero/Rain";
 import NeonBuildingLightsCityWindow from "./NeonBuildingLightsCityWindow";
+import EditorInterface from "./EditorInterface";
 
 interface WorkspaceProps {
   hour: number;
@@ -91,22 +92,16 @@ export default function Workspace({
         />
 
         <div
-          className="absolute bg-transparent transition-all border border-dashed border-cyan-500/30 hover:border-cyan-400"
+          className="absolute bg-transparent transition-all"
           style={{
-            top: "8.5%",
-            left: "20.1%",
-            width: "59.8%",
-            height: "67.8%",
+            top: "11%",
+            left: "21.2%",
+            width: "57.7%",
+            height: "62%",
             zIndex: 2,
           }}
         >
-          <div className="w-full h-full p-[1.2vw] text-emerald-400 font-mono text-[max(11px,0.85vw)] overflow-hidden bg-black/40 backdrop-blur-[1px]">
-            <p className="text-gray-500">// Ready to code...</p>
-            <p className="text-cyan-400">const section = "Workspace";</p>
-            <p className="text-purple-400">
-              console.log(`Current Hour: {hour}`);
-            </p>
-          </div>
+          <EditorInterface />
         </div>
 
         <NeonBuildingLightsCityWindow hour={hour} />
