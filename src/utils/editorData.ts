@@ -12,13 +12,13 @@ export const filesList = [
   { id: "about", label: "About.tsx", icon: FileCode2, color: "text-blue-400" },
   {
     id: "skills",
-    label: "Skills.tsx",
+    label: "Skills.ts",
     icon: FileCode2,
     color: "text-yellow-400",
   },
   {
     id: "experience",
-    label: "Experience.tsx",
+    label: "Experience.ts",
     icon: FileCode2,
     color: "text-orange-400",
   },
