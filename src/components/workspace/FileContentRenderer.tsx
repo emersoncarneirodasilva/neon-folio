@@ -22,29 +22,43 @@ export const FileContentRenderer = ({ activeTab }: { activeTab: string }) => {
         </div>
         <div className="pl-12 text-[#9CDCFE]">{"<p>"}</div>
         <div className="pl-16 text-gray-300">
-          Acredito que o bom software nasce do equilíbrio entre
+          Mestre em Química pela UFRN, encontrei no desenvolvimento
         </div>
         <div className="pl-16 text-gray-300">
-          funcionalidade e simplicidade. Meu foco é desenvolver
+          de software a intersecção perfeita entre rigor técnico e
         </div>
         <div className="pl-16 text-gray-300">
-          soluções que atendam às necessidades do projeto de
+          criatividade. Uso minha visão analítica para resolver
         </div>
         <div className="pl-16 text-gray-300">
-          forma clara, eficiente e sustentável.
+          problemas complexos com foco em resultados.
         </div>
         <div className="pl-12 text-[#9CDCFE]">{"</p>"}</div>
         <div className="pl-12 text-[#9CDCFE]">{"<p>"}</div>
         <div className="pl-16 text-gray-300">
-          Gosto de transformar requisitos em código limpo, sempre
+          Minha abordagem profissional prioriza a construção de
         </div>
         <div className="pl-16 text-gray-300">
-          buscando aprender novas formas de evoluir minhas
+          experiências que equilibram performance, usabilidade e
         </div>
         <div className="pl-16 text-gray-300">
-          habilidades e contribuir para o sucesso das entregas.
+          código limpo, garantindo soluções sustentáveis e de
+        </div>
+        <div className="pl-16 text-gray-300">
+          alto impacto para os usuários finais.
         </div>
         <div className="pl-12 text-[#9CDCFE]">{"</p>"}</div>
+        <div className="pl-12 text-[#9CDCFE]">{"<p>"}</div>
+        <div className="pl-16 text-gray-300">
+          Este portfólio, o <span className="text-[#CE9178]">Neon-Folio</span>,
+          reflete minha busca por
+        </div>
+        <div className="pl-16 text-gray-300">
+          experiências imersivas e precisas. Vamos construir algo
+        </div>
+        <div className="pl-16 text-gray-300">incrível juntos?</div>
+        <div className="pl-12 text-[#9CDCFE]">{"</p>"}</div>
+
         <div className="pl-8 text-[#569CD6]">{"</div>"}</div>
         <div className="pl-4 text-white">);</div>
         <div className="text-white">{"};"}</div>
