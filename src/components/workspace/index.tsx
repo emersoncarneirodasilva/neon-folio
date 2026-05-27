@@ -12,6 +12,7 @@ import Clouds from "../Hero/Clouds";
 import Rain from "../Hero/Rain";
 import NeonBuildingLightsCityWindow from "./NeonBuildingLightsCityWindow";
 import EditorInterface from "./EditorInterface";
+import { RetroTerminal } from "./RetroTerminal";
 
 interface WorkspaceProps {
   hour: number;
@@ -91,6 +92,7 @@ export default function Workspace({
           style={{ zIndex: 1 }}
         />
 
+        {/* Container do Monitor do Laptop */}
         <div
           className="absolute bg-transparent transition-all"
           style={{
@@ -102,6 +104,31 @@ export default function Workspace({
           }}
         >
           <EditorInterface />
+        </div>
+
+        {/* Container do Mini Monitor */}
+        <div
+          className="absolute overflow-hidden rounded-2xl"
+          style={{
+            top: "60.4%",
+            left: "85.7%",
+            width: "11.6%",
+            height: "13.2%",
+            zIndex: 3,
+            perspective: "500px",
+          }}
+        >
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              transform: "rotateY(-5deg) skewY(1.3deg)",
+              transformOrigin: "center",
+              background: "black",
+            }}
+          >
+            <RetroTerminal />
+          </div>
         </div>
 
         <NeonBuildingLightsCityWindow hour={hour} />
