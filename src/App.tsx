@@ -10,7 +10,7 @@ export default function App() {
   const [intensity, setIntensity] = useState<RainIntensity>("medium");
   const [isRaining, setIsRaining] = useState(false);
 
-  // const hour = 16;
+  // const hour = 11;
 
   const isRainingRef = useRef(false);
   const climateTimerRef = useRef<number | null>(null);
