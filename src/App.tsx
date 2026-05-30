@@ -179,7 +179,6 @@ export default function App() {
           // Modificado: Combina o deslocamento do Workspace com o deslocamento adicional do Stream
           transform:
             "translateY(calc(var(--workspace-offset, 0px) + var(--stream-additional-offset, 0px)))",
-          // Pequeno ajuste de margem para selar qualquer gap de renderização
           marginTop: "-1px",
         }}
       >

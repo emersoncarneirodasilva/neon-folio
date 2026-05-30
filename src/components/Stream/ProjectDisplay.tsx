@@ -40,7 +40,7 @@ export default function ProjectDisplay({
           className={`absolute inset-0 bg-black/85 transition-opacity duration-300 p-4 flex flex-col justify-center items-center text-center gap-2
                     ${isOverlayVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto"}`}
         >
-          <h4 className="text-cyan-400 font-mono text-lg sm:text-xl shrink-0">
+          <h4 className="text-cyan-400 font-mono text-base sm:text-xl shrink-0">
             {activeProject.title.toUpperCase()}
           </h4>
 
