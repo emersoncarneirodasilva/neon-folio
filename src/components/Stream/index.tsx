@@ -78,6 +78,14 @@ export default function Stream({
       style={{ isolation: "isolate" }}
     >
       <div className="w-full h-[12vw] max-h-55 min-h-15 bg-[#05050d] shrink-0" />
+      <div
+        className="absolute left-0 w-full h-[4vw] max-h-20 min-h-7.5 pointer-events-none z-50"
+        style={{
+          top: "12vw",
+          background:
+            "linear-gradient(to bottom, #05050d 0%, transparent 100%)",
+        }}
+      />
       <div className="relative w-full max-w-480 aspect-video flex items-center justify-center">
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <Sky

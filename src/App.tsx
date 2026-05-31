@@ -1,7 +1,9 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useLayoutEffect } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Hero from "./components/Hero";
 import Workspace from "./components/Workspace";
 import Stream from "./components/Stream";
+import Uplink from "./components/Uplink";
 
 type RainIntensity = "low" | "medium" | "storm";
 
@@ -80,71 +82,57 @@ export default function App() {
     };
   }, []);
 
-  // 🚀 3. --- MOTOR DE PARALAXE SELETIVO (GATILHO DE REVELAÇÃO) --- //
-  useEffect(() => {
-    const handleScroll = () => {
-      // Modificado: Adicionado workspaceContainerRef à verificação
-      if (!heroContainerRef.current || !workspaceContainerRef.current) return;
+  // 🚀 3. --- MOTOR DE PARALAXE PROFISSIONAL (Framer Motion) --- //
+  const { scrollY } = useScroll();
 
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const heroHeight = heroContainerRef.current.offsetHeight;
+  // O useSpring suaviza a rolagem, dando um efeito de "inércia" premium
+  const smoothY = useSpring(scrollY, {
+    damping: 15,
+    stiffness: 100,
+    mass: 0.2,
+  });
 
-      // Ponto crítico: Quando a base do Hero está quase aparecendo inteira na tela
-      const triggerPoint = heroHeight - windowHeight;
+  const [dims, setDims] = useState({ hero: 0, workspace: 0, window: 0 });
 
-      if (scrollY > triggerPoint) {
-        // Quantos pixels passamos do ponto onde as ACs aparecem
-        const overflow = scrollY - triggerPoint;
-
-        // Aplica o paralaxe acelerando APENAS o Workspace a partir daqui (* 0.4)
-        document.documentElement.style.setProperty(
-          "--workspace-offset",
-          `${overflow * -0.4}px`,
-        );
-        // Resetar o deslocamento adicional do stream se estivermos antes do gatilho do workspace
-        document.documentElement.style.setProperty(
-          "--stream-additional-offset",
-          "0px",
-        );
-      } else {
-        document.documentElement.style.setProperty("--workspace-offset", "0px");
-        document.documentElement.style.setProperty(
-          "--stream-additional-offset",
-          "0px",
-        );
-      }
-
-      // Novo ponto crítico para o Stream: Quando a base do Workspace está quase aparecendo inteira na tela
-      // Calcula a altura do contêiner do Workspace
-      const workspaceHeight = workspaceContainerRef.current.offsetHeight;
-
-      // Lógica de gatilho diferenciada para evitar que o Stream "engula" o Workspace no Mobile:
-      // No Desktop: Começa assim que o Stream aparece no rodapé.
-      // No Mobile (< 768px): Começa apenas quando o centro do Workspace atinge o centro da tela.
-      const streamTriggerPoint =
-        window.innerWidth < 768
-          ? heroHeight + workspaceHeight / 2 - windowHeight / 2
-          : heroHeight + workspaceHeight - windowHeight;
-
-      if (scrollY > streamTriggerPoint) {
-        // Quantos pixels passamos do ponto onde o Stream deve acelerar mais
-        const streamOverflow = scrollY - streamTriggerPoint;
-        // Aceleramos um pouco mais (fator 0.8) para destacar a entrada da nova seção
-        document.documentElement.style.setProperty(
-          "--stream-additional-offset",
-          `${streamOverflow * -0.8}px`,
-        );
-      } else {
-        document.documentElement.style.setProperty(
-          "--stream-additional-offset",
-          "0px",
-        );
-      }
+  useLayoutEffect(() => {
+    const update = () => {
+      setDims({
+        hero: heroContainerRef.current?.offsetHeight || 0,
+        workspace: workspaceContainerRef.current?.offsetHeight || 0,
+        window: window.innerHeight,
+      });
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
   }, []);
+
+  // Cálculo de Offset do Workspace
+  const workspaceY = useTransform(smoothY, (v) => {
+    const isMobile = window.innerWidth < 768;
+    const trigger = dims.hero;
+
+    // No mobile, subimos mais devagar (-0.2 em vez de -0.4)
+    const multiplier = isMobile ? -0.2 : -0.4;
+    return v > trigger ? (v - trigger) * multiplier : 0;
+  });
+
+  // Cálculo de Offset do Stream & Uplink (Soma os dois efeitos)
+  const streamTotalY = useTransform(smoothY, (v) => {
+    const isMobile = window.innerWidth < 768;
+    const wTrigger = dims.hero;
+    // No mobile, esperamos 80% da seção passar para começar a cobrir
+    const sTrigger = isMobile
+      ? dims.hero + dims.workspace * 0.8
+      : dims.hero + dims.workspace;
+
+    const wMultiplier = isMobile ? -0.1 : -0.4;
+    const sMultiplier = isMobile ? -0.2 : -0.8;
+
+    const wOff = v > wTrigger ? (v - wTrigger) * wMultiplier : 0;
+    const sOff = v > sTrigger ? (v - sTrigger) * sMultiplier : 0;
+    return wOff + sOff;
+  });
 
   return (
     <main className="w-full min-h-screen bg-[#05050d] relative flex flex-col overflow-x-hidden">
@@ -156,34 +144,40 @@ export default function App() {
       </div>
 
       {/* 💻 SEÇÃO 2: WORKSPACE (Ganha super velocidade após as ACs surgirem) */}
-      <div
-        ref={workspaceContainerRef} // Adicionado: Anexa a nova ref ao contêiner do Workspace
-        className="relative w-full bg-[#05050d] z-10 shadow-[0_-40px_100px_rgba(0,0,0,0.95)] will-change-transform"
-        style={{
-          // A mágica acontece aqui: translateY dinâmico puxa o Workspace para cima mais rápido
-          transform: "translateY(var(--workspace-offset, 0px))",
-          marginTop: "-1px",
-        }}
+      <motion.div
+        ref={workspaceContainerRef}
+        className="relative w-full bg-[#05050d] z-10 shadow-[0_-40px_100px_rgba(0,0,0,0.95)] will-change-transform -mt-px"
+        style={{ y: workspaceY }}
       >
         <Workspace
           hour={hour}
           isRaining={isRaining}
           rainIntensity={intensity}
         />
-      </div>
+      </motion.div>
 
-      {/* 📺 SEÇÃO 3: STREAM (Sincronizado com o Workspace para manter a fluidez) */}
-      <div
-        className="relative w-full bg-[#05050d] z-20 shadow-[0_-60px_120px_rgba(0,0,0,1)] will-change-transform"
+      {/* 📺 SEÇÃO 3 & 4: STREAM & UPLINK */}
+      <motion.div
+        className="relative w-full bg-[#05050d] z-20 shadow-[0_-60px_120px_rgba(0,0,0,1)] will-change-transform -mt-px"
         style={{
-          // Modificado: Combina o deslocamento do Workspace com o deslocamento adicional do Stream
-          transform:
-            "translateY(calc(var(--workspace-offset, 0px) + var(--stream-additional-offset, 0px)))",
-          marginTop: "-1px",
+          y: streamTotalY,
+          // Compensa o deslocamento para que o rodapé acompanhe a subida
+          marginBottom: streamTotalY,
         }}
       >
         <Stream hour={hour} isRaining={isRaining} rainIntensity={intensity} />
-      </div>
+
+        <div className="relative w-full bg-[#05050d] shadow-[0_-80px_150px_rgba(0,0,0,1)] z-30 -mt-px">
+          <Uplink hour={hour} isRaining={isRaining} rainIntensity={intensity} />
+        </div>
+      </motion.div>
+
+      <footer
+        className="w-full h-fit bg-[#a618da] z-40 flex items-center justify-center"
+        style={{ willChange: "transform" }}
+      >
+        Rodapé
+      </footer>
     </main>
   );
 }
