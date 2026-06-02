@@ -6,9 +6,9 @@ import bgUplinkDay from "../../assets/uplink-image/bg-uplink-day.webp";
 import bgUplinkSunset from "../../assets/uplink-image/bg-uplink-sunset.webp";
 import bgUplinkNight from "../../assets/uplink-image/bg-uplink-night.webp";
 
-import bgUplinkSunriseCut from "../../assets/uplink-image/bg-uplink-night-cut.webp";
-import bgUplinkDayCut from "../../assets/uplink-image/bg-uplink-night-cut.webp";
-import bgUplinkSunsetCut from "../../assets/uplink-image/bg-uplink-night-cut.webp";
+import bgUplinkSunriseCut from "../../assets/uplink-image/bg-uplink-sunrise-cut.webp";
+import bgUplinkDayCut from "../../assets/uplink-image/bg-uplink-day-cut.webp";
+import bgUplinkSunsetCut from "../../assets/uplink-image/bg-uplink-sunset-cut.webp";
 import bgUplinkNightCut from "../../assets/uplink-image/bg-uplink-night-cut.webp";
 
 // Imports das imagens da cidade
