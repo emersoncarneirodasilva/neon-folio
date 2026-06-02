@@ -43,7 +43,7 @@ export const PROJECTS_DATA: Project[] = [
     preview: neonwaveImage,
     description:
       "Gerencie, baixe e ouça suas músicas em um ambiente desktop imersivo.",
-    techs: ["Electron", "React", "Node.js", "Tailwind", "Prisma ORM"],
+    techs: ["Electron", "Node.js", "Prisma ORM", "React", "Tailwind"],
     links: {
       live: "#",
       github: "https://github.com/emersoncarneirodasilva/neonwave",

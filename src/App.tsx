@@ -171,13 +171,6 @@ export default function App() {
           <Uplink hour={hour} isRaining={isRaining} rainIntensity={intensity} />
         </div>
       </motion.div>
-
-      <footer
-        className="w-full h-fit bg-[#a618da] z-40 flex items-center justify-center"
-        style={{ willChange: "transform" }}
-      >
-        Rodapé
-      </footer>
     </main>
   );
 }
