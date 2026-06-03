@@ -18,12 +18,14 @@ import bgStreamDayCut from "../../assets/stream-image/bg-stream-day-cut.webp";
 import bgStreamSunsetCut from "../../assets/stream-image/bg-stream-sunset-cut.webp";
 import bgStreamNightCut from "../../assets/stream-image/bg-stream-night-cut.webp";
 
-import cityInDay from "../../assets/workspace-image/city-in-window-day.webp";
-import cityInSunrise from "../../assets/workspace-image/city-in-window-sunrise.webp";
-import cityInSunset from "../../assets/workspace-image/city-in-window-sunset.webp";
-import cityInNight from "../../assets/workspace-image/city-in-window-night.webp";
+import cityInSunrise from "../../assets/city-in-the-window/city-in-the-window-sunrise.webp";
+import cityInDay from "../../assets/city-in-the-window/city-in-the-window-day.webp";
+import cityInSunset from "../../assets/city-in-the-window/city-in-the-window-sunset.webp";
+import cityInNight from "../../assets/city-in-the-window/city-in-the-window-night.webp";
+
 import NeonBuildingLightsCityWindow from "./NeonBuildingLightsCityWindow";
 import DigitalClock from "./DigitalClock";
+import { AeronauticalSignalingLight } from "./AeronauticalSignalingLight";
 
 interface StreamProps {
   hour: number;
@@ -150,7 +152,12 @@ export default function Stream({
           <DigitalClock />
         </div>
 
-        {!isMobile && <NeonBuildingLightsCityWindow hour={hour} />}
+        {!isMobile && (
+          <>
+            <NeonBuildingLightsCityWindow hour={hour} />
+            <AeronauticalSignalingLight hour={hour} />
+          </>
+        )}
       </div>
     </section>
   );

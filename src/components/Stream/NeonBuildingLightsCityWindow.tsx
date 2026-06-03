@@ -11,7 +11,7 @@ export default function NeonBuildingLightsCityWindow({
 
   return (
     <div className="absolute inset-0 pointer-events-none z-15 overflow-hidden">
-      {/* 1. GLOW AZUL */}
+      {/* 1. GLOW AZUL (ESQUERDA) */}
       <div
         className="neon-layer bg-blue-500/40 blur-[20px] animate-neon-flicker-intense"
         style={{
@@ -24,7 +24,7 @@ export default function NeonBuildingLightsCityWindow({
         }}
       />
 
-      {/* 2. GLOW ROXO */}
+      {/* 2. GLOW ROXO (ESQUERDA) */}
       <div
         className="neon-layer bg-purple-400/40 blur-[20px] animate-neon-pulse"
         style={{
@@ -37,7 +37,7 @@ export default function NeonBuildingLightsCityWindow({
         }}
       />
 
-      {/* 3. GLOW AMARELO */}
+      {/* 3. GLOW AMARELO (CENTRAL) */}
       <div
         className="neon-layer bg-yellow-400/40 blur-[10px] animate-neon-flicker"
         style={{
@@ -50,21 +50,86 @@ export default function NeonBuildingLightsCityWindow({
         }}
       />
 
-      {/* 4. GLOW VERMELHO */}
+      {/* 4. GLOW BRANCO (DIREITA) */}
       <div
-        className="neon-layer bg-red-600/40 blur-[10px] animate-neon-flicker-intense"
+        className="neon-layer bg-white/40 blur-[7px] animate-neon-pulse"
         style={{
           mixBlendMode: "screen",
           borderRadius: "0%",
-          left: "83.4%",
-          top: "46.5%",
-          width: "1.2%",
+          top: "33.8%",
+          left: "81.7%",
+          width: "0.7%",
+          height: "4.5%",
+        }}
+      />
+
+      {/* 5. GLOW ROSA (DIREITA) */}
+      <div
+        className="neon-layer bg-pink-500/60 blur-[20px] animate-neon-pulse"
+        style={{
+          mixBlendMode: "screen",
+          borderRadius: "0%",
+          top: "22.8%",
+          left: "89.8%",
+          width: "4.5%",
+          height: "4.5%",
+        }}
+      />
+
+      {/* 6. GLOW AZUL (DIREITA) */}
+      <div
+        className="neon-layer bg-blue-500/40 blur-[20px] animate-neon-pulse"
+        style={{
+          mixBlendMode: "screen",
+          borderRadius: "10%",
+          top: "43.1%",
+          left: "90%",
+          width: "3.4%",
+          height: "7.7%",
+        }}
+      />
+
+      {/* 7. GLOW ROXO (DIREITA) */}
+      <div
+        className="neon-layer bg-purple-400/40 blur-[20px] animate-neon-flicker"
+        style={{
+          mixBlendMode: "screen",
+          borderRadius: "0%",
+          top: "53.5%",
+          left: "85.5%",
+          width: "7%",
+          height: "6%",
+        }}
+      />
+
+      {/* 8. GLOW ROSA (DIREITA) */}
+      <div
+        className="neon-layer bg-pink-500/40 blur-[20px] animate-neon-pulse"
+        style={{
+          mixBlendMode: "screen",
+          borderRadius: "30%",
+          top: "61.5%",
+          left: "86.5%",
+          width: "5%",
+          height: "11%",
+        }}
+      />
+
+      {/* 9. GLOW VERMELHO (DIREITA) */}
+      <div
+        className="neon-layer bg-red-600/40 blur-[30px] animate-neon-flicker-intense"
+        style={{
+          mixBlendMode: "screen",
+          borderRadius: "0%",
+          top: "65.5%",
+          left: "94%",
+          width: "2%",
           height: "6.6%",
         }}
       />
 
       {/* 5. GLOW VERDE */}
-      <div
+      {/* <div
         className="neon-layer bg-green-400/40 blur-2xl animate-[pulse_2s_infinite]"
         style={{
           mixBlendMode: "screen",
@@ -75,10 +140,10 @@ export default function NeonBuildingLightsCityWindow({
           width: "9%",
           height: "9%",
         }}
-      />
+      /> */}
 
       {/* 6. GLOW ROSA */}
-      <div
+      {/* <div
         className="neon-layer bg-pink-500/60 blur-[20px] animate-neon-pulse"
         style={{
           mixBlendMode: "screen",
@@ -88,7 +153,7 @@ export default function NeonBuildingLightsCityWindow({
           width: "3%",
           height: "7.5%",
         }}
-      />
+      /> */}
 
       {/* 🛠️ ESTILOS ANIMADOS (Injetados localmente com escopo limpo) */}
       <style>{`

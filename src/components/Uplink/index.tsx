@@ -12,10 +12,10 @@ import bgUplinkSunsetCut from "../../assets/uplink-image/bg-uplink-sunset-cut.we
 import bgUplinkNightCut from "../../assets/uplink-image/bg-uplink-night-cut.webp";
 
 // Imports das imagens da cidade
-import cityInSunrise from "../../assets/uplink-image/city-in-the-window-sunrise.webp";
-import cityInDay from "../../assets/uplink-image/city-in-the-window-day.webp";
-import cityInSunset from "../../assets/uplink-image/city-in-the-window-sunset.webp";
-import cityInNight from "../../assets/uplink-image/city-in-the-window-night.webp";
+import cityInSunrise from "../../assets/city-in-the-window/city-in-the-window-sunrise.webp";
+import cityInDay from "../../assets/city-in-the-window/city-in-the-window-day.webp";
+import cityInSunset from "../../assets/city-in-the-window/city-in-the-window-sunset.webp";
+import cityInNight from "../../assets/city-in-the-window/city-in-the-window-night.webp";
 
 // Importação dos componentes de ambientação
 import { AeroLayer } from "../AeroLayer";

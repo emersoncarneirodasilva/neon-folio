@@ -9,10 +9,10 @@ import bgWorkspaceDayCut from "../../assets/workspace-image/bg-workspace-day-cut
 import bgWorkspaceSunsetCut from "../../assets/workspace-image/bg-workspace-sunset-cut.webp";
 import bgWorkspaceNightCut from "../../assets/workspace-image/bg-workspace-night-cut.webp";
 
-import cityInSunrise from "../../assets/workspace-image/city-in-window-sunrise.webp";
-import cityInDay from "../../assets/workspace-image/city-in-window-day.webp";
-import cityInSunset from "../../assets/workspace-image/city-in-window-sunset.webp";
-import cityInNight from "../../assets/workspace-image/city-in-window-night.webp";
+import cityInSunrise from "../../assets/city-in-the-window/city-in-the-window-sunrise.webp";
+import cityInDay from "../../assets/city-in-the-window/city-in-the-window-day.webp";
+import cityInSunset from "../../assets/city-in-the-window/city-in-the-window-sunset.webp";
+import cityInNight from "../../assets/city-in-the-window/city-in-the-window-night.webp";
 
 import { AeroLayer } from "../AeroLayer";
 import Sky from "../Sky";
@@ -21,6 +21,7 @@ import Rain from "../Rain";
 import NeonBuildingLightsCityWindow from "./NeonBuildingLightsCityWindow";
 import EditorInterface from "./EditorInterface";
 import { RetroTerminal } from "./RetroTerminal";
+import { AeronauticalSignalingLight } from "./AeronauticalSignalingLight";
 
 interface WorkspaceProps {
   hour: number;
@@ -168,7 +169,12 @@ export default function Workspace({
           </div>
         </div>
 
-        {!isMobile && <NeonBuildingLightsCityWindow hour={hour} />}
+        {!isMobile && (
+          <>
+            <NeonBuildingLightsCityWindow hour={hour} />
+            <AeronauticalSignalingLight hour={hour} />
+          </>
+        )}
       </div>
     </section>
   );

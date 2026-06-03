@@ -11,59 +11,7 @@ export default function NeonBuildingLightsCityWindow({
 
   return (
     <div className="absolute inset-0 pointer-events-none z-15 overflow-hidden">
-      {/* 1. GLOW AZUL */}
-      <div
-        className="neon-layer bg-blue-500/60 blur-[15px] animate-neon-flicker-intense"
-        style={{
-          mixBlendMode: "screen",
-          borderRadius: "0%",
-          left: "15.8%",
-          top: "35.4%",
-          width: "1.2%",
-          height: "9%",
-        }}
-      />
-
-      <div
-        className="neon-layer bg-blue-500/60 blur-[15px] animate-neon-pulse"
-        style={{
-          mixBlendMode: "screen",
-          borderRadius: "30%",
-          left: "12.9%",
-          top: "43.8%",
-          width: "3.5%",
-          height: "3.5%",
-        }}
-      />
-
-      {/* 2. GLOW VERDE */}
-      <div
-        className="neon-layer bg-green-400/50 blur-[15px] animate-[pulse_2s_infinite]"
-        style={{
-          mixBlendMode: "screen",
-          animationDuration: "5s",
-          borderRadius: "0%",
-          left: "16%",
-          top: "28.5%",
-          width: "4%",
-          height: "5.5%",
-        }}
-      />
-
-      {/* 3. GLOW VERMELHO */}
-      <div
-        className="neon-layer bg-red-600/40 blur-[10px] animate-neon-flicker-intense"
-        style={{
-          mixBlendMode: "screen",
-          borderRadius: "0%",
-          left: "83.4%",
-          top: "37%",
-          width: "1.2%",
-          height: "6.6%",
-        }}
-      />
-
-      {/* 4. GLOW ROSA (TUBO ESQUERDO) */}
+      {/* 1. GLOW ROSA (TUBO ESQUERDA) */}
       <div
         className="neon-layer bg-pink-500/50 blur-[10px] animate-neon-flicker"
         style={{
@@ -76,7 +24,7 @@ export default function NeonBuildingLightsCityWindow({
         }}
       />
 
-      {/* 5. GLOW VERDE (TUDO DIREITO) */}
+      {/* 2. GLOW VERDE (TUDO DIREITA) */}
       <div
         className="neon-layer bg-green-400/60 blur-[25px] animate-[pulse_2s_infinite]"
         style={{
@@ -87,6 +35,96 @@ export default function NeonBuildingLightsCityWindow({
           top: "1%",
           width: "3%",
           height: "55%",
+        }}
+      />
+
+      {/* 3. GLOW AZUL (ESQUERDA) */}
+      <div
+        className="neon-layer bg-blue-500/60 blur-[15px] animate-[pulse_2s_infinite]"
+        style={{
+          mixBlendMode: "screen",
+          borderRadius: "0%",
+          top: "34%",
+          left: "15.3%",
+          width: "1.5%",
+          height: "2.5%",
+        }}
+      />
+
+      {/* 4. GLOW VERMELHO (ESQUERDA) */}
+      <div
+        className="neon-layer bg-red-600/40 blur-[7px] animate-neon-flicker-intense"
+        style={{
+          mixBlendMode: "screen",
+          borderRadius: "0%",
+          top: "40%",
+          left: "19.1%",
+          width: "0.7%",
+          height: "2%",
+        }}
+      />
+
+      {/* 5. GLOW BRANCO (DIREITA) */}
+      <div
+        className="neon-layer bg-white/40 blur-[7px] animate-neon-pulse"
+        style={{
+          mixBlendMode: "screen",
+          borderRadius: "0%",
+          top: "22%",
+          left: "81.7%",
+          width: "0.7%",
+          height: "4.5%",
+        }}
+      />
+
+      {/* 6. GLOW AZUL (DIREITA) */}
+      <div
+        className="neon-layer bg-blue-500/60 blur-[15px] animate-neon-pulse"
+        style={{
+          mixBlendMode: "screen",
+          borderRadius: "30%",
+          top: "50.2%",
+          left: "82.2%",
+          width: "0.7%",
+          height: "4%",
+        }}
+      />
+
+      {/* 7. GLOW ROXO (DIREITA) */}
+      <div
+        className="neon-layer bg-purple-400/40 blur-[20px] animate-neon-flicker"
+        style={{
+          mixBlendMode: "screen",
+          borderRadius: "0%",
+          top: "44%",
+          left: "85.5%",
+          width: "1.7%",
+          height: "8.5%",
+        }}
+      />
+
+      {/* LETREIRO (DIREITA) */}
+      <div
+        className="neon-layer bg-white/60 blur-[1px] animate-neon-pulse"
+        style={{
+          mixBlendMode: "screen",
+          borderRadius: "0%",
+          top: "35%",
+          left: "80.4%",
+          width: "0.7%",
+          height: "3.7%",
+        }}
+      />
+
+      <div
+        className="neon-layer bg-red-600/60 blur-[7px] animate-neon-flicker-intense"
+        style={{
+          mixBlendMode: "screen",
+          borderRadius: "0%",
+          top: "39%",
+          left: "80.4%",
+          width: "1%",
+          height: "1.5%",
         }}
       />
 
