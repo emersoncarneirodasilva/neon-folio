@@ -14,13 +14,14 @@ import cityInDay from "../../assets/city-in-the-window/city-in-the-window-day.we
 import cityInSunset from "../../assets/city-in-the-window/city-in-the-window-sunset.webp";
 import cityInNight from "../../assets/city-in-the-window/city-in-the-window-night.webp";
 
+import EditorInterface from "./EditorInterface";
+import { RetroTerminal } from "./RetroTerminal";
+
 import { AeroLayer } from "../AeroLayer";
 import Sky from "../Sky";
 import Clouds from "../Clouds";
 import Rain from "../Rain";
-import NeonBuildingLightsCityWindow from "./NeonBuildingLightsCityWindow";
-import EditorInterface from "./EditorInterface";
-import { RetroTerminal } from "./RetroTerminal";
+import NeonsAndLights from "./NeonsAndLights";
 import { AeronauticalSignalingLight } from "./AeronauticalSignalingLight";
 
 interface WorkspaceProps {
@@ -171,7 +172,7 @@ export default function Workspace({
 
         {!isMobile && (
           <>
-            <NeonBuildingLightsCityWindow hour={hour} />
+            <NeonsAndLights hour={hour} />
             <AeronauticalSignalingLight hour={hour} />
           </>
         )}

@@ -12,10 +12,10 @@ import bgUplinkSunsetCut from "../../assets/uplink-image/bg-uplink-sunset-cut.we
 import bgUplinkNightCut from "../../assets/uplink-image/bg-uplink-night-cut.webp";
 
 // Imports das imagens da cidade
-import cityInSunrise from "../../assets/city-in-the-window/city-in-the-window-sunrise.webp";
-import cityInDay from "../../assets/city-in-the-window/city-in-the-window-day.webp";
-import cityInSunset from "../../assets/city-in-the-window/city-in-the-window-sunset.webp";
-import cityInNight from "../../assets/city-in-the-window/city-in-the-window-night.webp";
+import cityInSunrise from "../../assets/city-in-the-window/city-in-the-window-sunrise-02.webp";
+import cityInDay from "../../assets/city-in-the-window/city-in-the-window-day-02.webp";
+import cityInSunset from "../../assets/city-in-the-window/city-in-the-window-sunset-02.webp";
+import cityInNight from "../../assets/city-in-the-window/city-in-the-window-night-02.webp";
 
 // Importação dos componentes de ambientação
 import { AeroLayer } from "../AeroLayer";
@@ -23,6 +23,7 @@ import Sky from "../Sky";
 import Clouds from "../Clouds";
 import Rain from "../Rain";
 import TerminalDisplay from "./TerminalDisplay";
+import NeonsAndLights from "./NeonsAndLights";
 
 interface UplinkProps {
   hour: number;
@@ -123,6 +124,13 @@ export default function Uplink({
         >
           <TerminalDisplay />
         </div>
+
+        {!isMobile && (
+          <>
+            <NeonsAndLights hour={hour} />
+            {/* <AeronauticalSignalingLight hour={hour} /> */}
+          </>
+        )}
       </div>
     </section>
   );

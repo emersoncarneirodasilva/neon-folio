@@ -1,11 +1,4 @@
 import { useState, useEffect } from "react";
-import { AeroLayer } from "../AeroLayer";
-import Sky from "../Sky";
-import Clouds from "../Clouds";
-import Rain from "../Rain";
-import ProjectSidebar from "./ProjectSidebar";
-import ProjectDisplay from "./ProjectDisplay";
-import { PROJECTS_DATA } from "../../utils/projects";
 
 // --- Assets ---
 import bgStreamSunrise from "../../assets/stream-image/bg-stream-sunrise.webp";
@@ -23,8 +16,15 @@ import cityInDay from "../../assets/city-in-the-window/city-in-the-window-day.we
 import cityInSunset from "../../assets/city-in-the-window/city-in-the-window-sunset.webp";
 import cityInNight from "../../assets/city-in-the-window/city-in-the-window-night.webp";
 
-import NeonBuildingLightsCityWindow from "./NeonBuildingLightsCityWindow";
+import { AeroLayer } from "../AeroLayer";
+import Sky from "../Sky";
+import Clouds from "../Clouds";
+import Rain from "../Rain";
+import ProjectSidebar from "./ProjectSidebar";
+import ProjectDisplay from "./ProjectDisplay";
+import { PROJECTS_DATA } from "../../utils/projects";
 import DigitalClock from "./DigitalClock";
+import NeonsAndLights from "./NeonsAndLights";
 import { AeronauticalSignalingLight } from "./AeronauticalSignalingLight";
 
 interface StreamProps {
@@ -154,7 +154,7 @@ export default function Stream({
 
         {!isMobile && (
           <>
-            <NeonBuildingLightsCityWindow hour={hour} />
+            <NeonsAndLights hour={hour} />
             <AeronauticalSignalingLight hour={hour} />
           </>
         )}

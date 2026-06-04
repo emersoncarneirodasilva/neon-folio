@@ -1,10 +1,8 @@
-interface NeonBuildingLightsCityWindowProps {
+interface NeonsAndLightsProps {
   hour: number;
 }
 
-export default function NeonBuildingLightsCityWindow({
-  hour,
-}: NeonBuildingLightsCityWindowProps) {
+export default function NeonsAndLights({ hour }: NeonsAndLightsProps) {
   // Opcional: Desativa ou diminui os glows intensos durante o dia claro (entre 5h e 18h)
   const isDaytime = hour >= 5 && hour < 18;
   if (isDaytime) return null;
@@ -127,33 +125,6 @@ export default function NeonBuildingLightsCityWindow({
           height: "6.6%",
         }}
       />
-
-      {/* 5. GLOW VERDE */}
-      {/* <div
-        className="neon-layer bg-green-400/40 blur-2xl animate-[pulse_2s_infinite]"
-        style={{
-          mixBlendMode: "screen",
-          animationDuration: "5s",
-          borderRadius: "40%",
-          left: "83%",
-          top: "60%",
-          width: "9%",
-          height: "9%",
-        }}
-      /> */}
-
-      {/* 6. GLOW ROSA */}
-      {/* <div
-        className="neon-layer bg-pink-500/60 blur-[20px] animate-neon-pulse"
-        style={{
-          mixBlendMode: "screen",
-          borderRadius: "20%",
-          left: "95.6%",
-          top: "42.3%",
-          width: "3%",
-          height: "7.5%",
-        }}
-      /> */}
 
       {/* 🛠️ ESTILOS ANIMADOS (Injetados localmente com escopo limpo) */}
       <style>{`

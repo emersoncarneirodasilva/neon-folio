@@ -1,10 +1,8 @@
-interface NeonBuildingLightsCityWindowProps {
+interface NeonsAndLightsProps {
   hour: number;
 }
 
-export default function NeonBuildingLightsCityWindow({
-  hour,
-}: NeonBuildingLightsCityWindowProps) {
+export default function NeonsAndLights({ hour }: NeonsAndLightsProps) {
   // Opcional: Desativa ou diminui os glows intensos durante o dia claro (entre 5h e 18h)
   const isDaytime = hour >= 5 && hour < 18;
   if (isDaytime) return null;
