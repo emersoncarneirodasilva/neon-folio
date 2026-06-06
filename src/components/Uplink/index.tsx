@@ -24,6 +24,7 @@ import Clouds from "../Clouds";
 import Rain from "../Rain";
 import TerminalDisplay from "./TerminalDisplay";
 import NeonsAndLights from "./NeonsAndLights";
+import { AeronauticalSignalingLight } from "./AeronauticalSignalingLight";
 
 interface UplinkProps {
   hour: number;
@@ -128,7 +129,7 @@ export default function Uplink({
         {!isMobile && (
           <>
             <NeonsAndLights hour={hour} />
-            {/* <AeronauticalSignalingLight hour={hour} /> */}
+            <AeronauticalSignalingLight hour={hour} />
           </>
         )}
       </div>

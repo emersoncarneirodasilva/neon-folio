@@ -119,10 +119,10 @@ export default function NeonsAndLights({ hour }: NeonsAndLightsProps) {
         style={{
           mixBlendMode: "screen",
           borderRadius: "0%",
-          top: "39%",
+          top: "38.6%",
           left: "80.4%",
-          width: "1%",
-          height: "1.5%",
+          width: "0.8%",
+          height: "2%",
         }}
       />
 

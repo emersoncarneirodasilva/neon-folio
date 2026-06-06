@@ -4,6 +4,7 @@ import bgHeroSunrise from "../../assets/home-image/bg-hero-sunrise.webp";
 import bgHeroDay from "../../assets/home-image/bg-hero-day.webp";
 import bgHeroSunset from "../../assets/home-image/bg-hero-sunset.webp";
 import bgHeroNight from "../../assets/home-image/bg-hero-night.webp";
+
 import bgHeroSunriseCut from "../../assets/home-image/bg-hero-sunrise-cut.webp";
 import bgHeroDayCut from "../../assets/home-image/bg-hero-day-cut.webp";
 import bgHeroNightCut from "../../assets/home-image/bg-hero-night-cut.webp";

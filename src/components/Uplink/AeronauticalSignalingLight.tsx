@@ -8,18 +8,11 @@ export const AeronauticalSignalingLight: React.FC<
   AeronauticalSignalingLightProps
 > = ({ hour }) => {
   const signalingPoints = [
-    { top: "5.5%", left: "27.2%", delay: "0s", type: "fixed" },
-    { top: "5.7%", left: "28%", delay: "0s", type: "fixed" },
-    { top: "9%", left: "40.1%", delay: "0s", type: "fixed" },
-    { top: "18.5%", left: "50.5%", delay: "0s", type: "flicker" },
-    { top: "35%", left: "55.25%", delay: "0.4s", type: "pulse" },
-    { top: "3.1%", left: "63.55%", delay: "0s", type: "fixed" },
-    { top: "28.8%", left: "70.24%", delay: "0s", type: "fixed" },
-    { top: "14.8%", left: "74.4%", delay: "0.6s", type: "pulse" },
-    { top: "34%", left: "77.57%", delay: "1.2s", type: "pulse" },
-    { top: "18.8%", left: "84.4%", delay: "0s", type: "fixed" },
-    { top: "19.45%", left: "92.75%", delay: "0s", type: "fixed" },
-    { top: "19.6%", left: "95.2%", delay: "0s", type: "flicker" },
+    { top: "16.2%", left: "78.66%", delay: "1.2s", type: "pulse" },
+    { top: "7.2%", left: "87.6%", delay: "0s", type: "fixed" },
+    { top: "10%", left: "92%", delay: "0s", type: "fixed" },
+    { top: "10%", left: "96%", delay: "0s", type: "fixed" },
+    { top: "17%", left: "98.8%", delay: "0.7s", type: "flicker" },
   ];
 
   const globalOpacity = useMemo(() => {

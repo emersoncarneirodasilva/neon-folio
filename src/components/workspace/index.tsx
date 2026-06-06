@@ -4,6 +4,7 @@ import bgWorkspaceSunrise from "../../assets/workspace-image/bg-workspace-sunris
 import bgWorkspaceDay from "../../assets/workspace-image/bg-workspace-day.webp";
 import bgWorkspaceSunset from "../../assets/workspace-image/bg-workspace-sunset.webp";
 import bgWorkspaceNight from "../../assets/workspace-image/bg-workspace-night.webp";
+
 import bgWorkspaceSunriseCut from "../../assets/workspace-image/bg-workspace-sunrise-cut.webp";
 import bgWorkspaceDayCut from "../../assets/workspace-image/bg-workspace-day-cut.webp";
 import bgWorkspaceSunsetCut from "../../assets/workspace-image/bg-workspace-sunset-cut.webp";
@@ -135,10 +136,10 @@ export default function Workspace({
         <div
           className="absolute bg-transparent transition-all duration-300"
           style={{
-            top: isMobile ? "10.8%" : "11%",
+            top: isMobile ? "10.8%" : "10.8%",
             left: isMobile ? "7%" : "21.2%",
             width: isMobile ? "85.7%" : "57.7%",
-            height: isMobile ? "62%" : "62%",
+            height: isMobile ? "62%" : "62.15%",
             zIndex: 2,
           }}
         >

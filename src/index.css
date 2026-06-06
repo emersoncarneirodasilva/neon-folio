@@ -22,6 +22,35 @@
   --animate-loading-bar: loading-bar 2s ease-in-out forwards;
 }
 
+/* --- SCROLLBAR PERSONALIZADO --- */
+
+/* Navegadores Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #00f3ff #05050d;
+}
+
+/* Navegadores Webkit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05050d; /* Fundo do container (seu bg-cyber-bg) */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #003033; /* Cyan escuro (frio) */
+  border-radius: 4px;
+  border: 1px solid #00f3ff; /* Borda neon */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00f3ff; /* Brilha em Neon Cyan ao passar o mouse */
+  box-shadow: 0 0 10px #00f3ff; /* Efeito de brilho */
+}
+
 /* Definição dos Keyframes */
 @keyframes natural-flicker {
   0%,

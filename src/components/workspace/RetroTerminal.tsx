@@ -53,13 +53,6 @@ export const RetroTerminal = () => {
           style={{ animation: "bounce 0.6s infinite" }}
         />
       </div>
-
-      <div
-        className="mt-[2%] truncate"
-        style={{ fontSize: "clamp(5px, 0.6vw, 10px)" }}
-      >
-        LOC: SEETOR_CYBER
-      </div>
     </div>
   );
 };
