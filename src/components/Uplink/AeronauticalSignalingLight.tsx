@@ -10,7 +10,7 @@ export const AeronauticalSignalingLight: React.FC<
   const signalingPoints = [
     { top: "16.2%", left: "78.66%", delay: "1.2s", type: "pulse" },
     { top: "7.2%", left: "87.6%", delay: "0s", type: "fixed" },
-    { top: "10%", left: "92%", delay: "0s", type: "fixed" },
+    { top: "10%", left: "92%", delay: "1.2s", type: "pulse" },
     { top: "10%", left: "96%", delay: "0s", type: "fixed" },
     { top: "17%", left: "98.8%", delay: "0.7s", type: "flicker" },
   ];

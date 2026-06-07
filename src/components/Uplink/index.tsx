@@ -84,7 +84,6 @@ export default function Uplink({
       />
 
       <div className="relative w-full max-w-480 aspect-video flex items-center justify-center">
-        {/* 1. Camada de Fundo (Céu, Nuvens, Aeronaves e Cidade - Z-index 0) */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <Sky
             hour={hour}
@@ -102,14 +101,12 @@ export default function Uplink({
           {isRaining && <Rain intensity={rainIntensity} />}
         </div>
 
-        {/* 2. Camada da Imagem Principal (Cafeteria/Mesa - Z-index 10) */}
         <img
           src={bgImg}
           className="relative z-10 w-full h-full object-cover select-none pointer-events-none"
           alt="Uplink Background"
         />
 
-        {/* 3. Container do Terminal (Interface - Z-index 20) */}
         <div
           className="absolute z-20 flex items-center justify-center rounded-xl"
           style={{

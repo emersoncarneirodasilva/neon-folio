@@ -48,79 +48,66 @@ export default function NeonsAndLights({ hour }: NeonsAndLightsProps) {
         }}
       />
 
-      {/* 4. GLOW BRANCO (DIREITA) */}
+      {/* 4. GLOW ROSA (DIREITA) */}
       <div
-        className="neon-layer bg-white/40 blur-[7px] animate-neon-pulse"
+        className="neon-layer bg-pink-500/60 blur-[25px] animate-neon-pulse"
         style={{
           mixBlendMode: "screen",
           borderRadius: "0%",
-          top: "33.8%",
-          left: "81.7%",
-          width: "0.7%",
-          height: "4.5%",
-        }}
-      />
-
-      {/* 5. GLOW ROSA (DIREITA) */}
-      <div
-        className="neon-layer bg-pink-500/60 blur-[20px] animate-neon-pulse"
-        style={{
-          mixBlendMode: "screen",
-          borderRadius: "0%",
-          top: "22.8%",
-          left: "89.8%",
+          top: "24%",
+          left: "88.8%",
           width: "4.5%",
           height: "4.5%",
         }}
       />
 
-      {/* 6. GLOW AZUL (DIREITA) */}
+      {/* 5. GLOW AZUL (DIREITA) */}
       <div
         className="neon-layer bg-blue-500/40 blur-[20px] animate-neon-pulse"
         style={{
           mixBlendMode: "screen",
           borderRadius: "10%",
-          top: "43.1%",
-          left: "90%",
+          top: "44.5%",
+          left: "89.1%",
           width: "3.4%",
-          height: "7.7%",
+          height: "7%",
         }}
       />
 
-      {/* 7. GLOW ROXO (DIREITA) */}
+      {/* 6. GLOW ROXO (DIREITA) */}
       <div
         className="neon-layer bg-purple-400/40 blur-[20px] animate-neon-flicker"
         style={{
           mixBlendMode: "screen",
           borderRadius: "0%",
-          top: "53.5%",
-          left: "85.5%",
+          top: "54.7%",
+          left: "84.5%",
           width: "7%",
           height: "6%",
         }}
       />
 
-      {/* 8. GLOW ROSA (DIREITA) */}
+      {/* 7. GLOW ROSA (DIREITA) */}
       <div
         className="neon-layer bg-pink-500/40 blur-[20px] animate-neon-pulse"
         style={{
           mixBlendMode: "screen",
           borderRadius: "30%",
-          top: "61.5%",
-          left: "86.5%",
+          top: "62.5%",
+          left: "85.5%",
           width: "5%",
-          height: "11%",
+          height: "10%",
         }}
       />
 
-      {/* 9. GLOW VERMELHO (DIREITA) */}
+      {/* 8. GLOW VERMELHO (DIREITA) */}
       <div
         className="neon-layer bg-red-600/40 blur-[30px] animate-neon-flicker-intense"
         style={{
           mixBlendMode: "screen",
           borderRadius: "0%",
-          top: "65.5%",
-          left: "94%",
+          top: "66.5%",
+          left: "93%",
           width: "2%",
           height: "6.6%",
         }}

@@ -8,10 +8,10 @@ export const AeronauticalSignalingLight: React.FC<
   AeronauticalSignalingLightProps
 > = ({ hour }) => {
   const signalingPoints = [
-    { top: "10%", left: "13.3%", delay: "0s", type: "fixed" },
-    { top: "14.2%", left: "18.45%", delay: "0.7s", type: "pulse" },
-    { top: "3.1%", left: "67.08%", delay: "0s", type: "flicker" },
-    { top: "19.1%", left: "81.2%", delay: "0s", type: "pulse" },
+    { top: "16%", left: "14.5%", delay: "0s", type: "fixed" },
+    { top: "16.5%", left: "17.6%", delay: "0.7s", type: "pulse" },
+    { top: "6.5%", left: "64.1%", delay: "0s", type: "pulse" },
+    { top: "2.1%", left: "86.6%", delay: "0s", type: "flicker" },
   ];
 
   const globalOpacity = useMemo(() => {

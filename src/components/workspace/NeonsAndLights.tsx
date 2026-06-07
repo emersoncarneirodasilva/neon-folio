@@ -42,87 +42,61 @@ export default function NeonsAndLights({ hour }: NeonsAndLightsProps) {
         style={{
           mixBlendMode: "screen",
           borderRadius: "0%",
-          top: "34%",
-          left: "15.3%",
-          width: "1.5%",
-          height: "2.5%",
-        }}
-      />
-
-      {/* 4. GLOW VERMELHO (ESQUERDA) */}
-      <div
-        className="neon-layer bg-red-600/40 blur-[7px] animate-neon-flicker-intense"
-        style={{
-          mixBlendMode: "screen",
-          borderRadius: "0%",
-          top: "40%",
-          left: "19.1%",
-          width: "0.7%",
-          height: "2%",
-        }}
-      />
-
-      {/* 5. GLOW BRANCO (DIREITA) */}
-      <div
-        className="neon-layer bg-white/40 blur-[7px] animate-neon-pulse"
-        style={{
-          mixBlendMode: "screen",
-          borderRadius: "0%",
-          top: "22%",
-          left: "81.7%",
-          width: "0.7%",
-          height: "4.5%",
-        }}
-      />
-
-      {/* 6. GLOW AZUL (DIREITA) */}
-      <div
-        className="neon-layer bg-blue-500/60 blur-[15px] animate-neon-pulse"
-        style={{
-          mixBlendMode: "screen",
-          borderRadius: "30%",
-          top: "50.2%",
-          left: "82.2%",
-          width: "0.7%",
-          height: "4%",
-        }}
-      />
-
-      {/* 7. GLOW ROXO (DIREITA) */}
-      <div
-        className="neon-layer bg-purple-400/40 blur-[20px] animate-neon-flicker"
-        style={{
-          mixBlendMode: "screen",
-          borderRadius: "0%",
-          top: "44%",
-          left: "85.5%",
+          top: "35%",
+          left: "14.2%",
           width: "1.7%",
-          height: "8.5%",
+          height: "2.8%",
+        }}
+      />
+
+      {/* 4. GLOW AMARELO (ESQUERDA) */}
+      <div
+        className="neon-layer bg-yellow-600/80 blur-[7px] animate-neon-flicker-intense"
+        style={{
+          mixBlendMode: "screen",
+          borderRadius: "0%",
+          top: "41%",
+          left: "18.35%",
+          width: "0.5%",
+          height: "7%",
+        }}
+      />
+
+      {/* 5. GLOW ROXO (DIREITA) */}
+      <div
+        className="neon-layer bg-purple-400/60 blur-[20px] animate-neon-flicker"
+        style={{
+          mixBlendMode: "screen",
+          borderRadius: "0%",
+          top: "46%",
+          left: "84.5%",
+          width: "2.6%",
+          height: "7.5%",
         }}
       />
 
       {/* LETREIRO (DIREITA) */}
       <div
-        className="neon-layer bg-white/60 blur-[1px] animate-neon-pulse"
+        className="neon-layer bg-white/60 blur-[15px] animate-neon-pulse"
         style={{
           mixBlendMode: "screen",
           borderRadius: "0%",
-          top: "35%",
-          left: "80.4%",
+          top: "40.4%",
+          left: "80.5%",
           width: "0.7%",
-          height: "3.7%",
+          height: "3%",
         }}
       />
 
       <div
-        className="neon-layer bg-red-600/60 blur-[7px] animate-neon-flicker-intense"
+        className="neon-layer bg-red-600/85 blur-[6px] animate-neon-flicker-intense"
         style={{
           mixBlendMode: "screen",
           borderRadius: "0%",
-          top: "38.6%",
-          left: "80.4%",
+          top: "39%",
+          left: "80.5%",
           width: "0.8%",
-          height: "2%",
+          height: "1.7%",
         }}
       />
 
