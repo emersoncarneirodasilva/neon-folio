@@ -48,7 +48,7 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #00f3ff; /* Brilha em Neon Cyan ao passar o mouse */
-  box-shadow: 0 0 10px #00f3ff; /* Efeito de brilho */
+  box-shadow: 0 0 10px #00f3ff;
 }
 
 /* Definição dos Keyframes */
