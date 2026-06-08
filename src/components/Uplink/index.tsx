@@ -1,23 +1,7 @@
 import { useState, useEffect } from "react";
 
-// Imports das imagens de fundo (Cenário do Uplink)
-import bgUplinkSunrise from "../../assets/uplink-image/bg-uplink-sunrise.webp";
-import bgUplinkDay from "../../assets/uplink-image/bg-uplink-day.webp";
-import bgUplinkSunset from "../../assets/uplink-image/bg-uplink-sunset.webp";
-import bgUplinkNight from "../../assets/uplink-image/bg-uplink-night.webp";
+import { getTimePeriod, UPLINK_THEME } from "../../utils/themeUtils";
 
-import bgUplinkSunriseCut from "../../assets/uplink-image/bg-uplink-sunrise-cut.webp";
-import bgUplinkDayCut from "../../assets/uplink-image/bg-uplink-day-cut.webp";
-import bgUplinkSunsetCut from "../../assets/uplink-image/bg-uplink-sunset-cut.webp";
-import bgUplinkNightCut from "../../assets/uplink-image/bg-uplink-night-cut.webp";
-
-// Imports das imagens da cidade
-import cityInSunrise from "../../assets/city-in-the-window/city-in-the-window-sunrise-02.webp";
-import cityInDay from "../../assets/city-in-the-window/city-in-the-window-day-02.webp";
-import cityInSunset from "../../assets/city-in-the-window/city-in-the-window-sunset-02.webp";
-import cityInNight from "../../assets/city-in-the-window/city-in-the-window-night-02.webp";
-
-// Importação dos componentes de ambientação
 import { AeroLayer } from "../AeroLayer";
 import Sky from "../Sky";
 import Clouds from "../Clouds";
@@ -46,25 +30,9 @@ export default function Uplink({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const getTheme = () => {
-    if (hour >= 5 && hour < 7)
-      return {
-        bg: bgUplinkSunrise,
-        bgCut: bgUplinkSunriseCut,
-        city: cityInSunrise,
-      };
-    if (hour >= 7 && hour < 16)
-      return { bg: bgUplinkDay, bgCut: bgUplinkDayCut, city: cityInDay };
-    if (hour >= 16 && hour < 18)
-      return {
-        bg: bgUplinkSunset,
-        bgCut: bgUplinkSunsetCut,
-        city: cityInSunset,
-      };
-    return { bg: bgUplinkNight, bgCut: bgUplinkNightCut, city: cityInNight };
-  };
+  const period = getTimePeriod(hour);
+  const theme = UPLINK_THEME[period];
 
-  const theme = getTheme();
   const bgImg = isMobile ? theme.bgCut : theme.bg;
 
   return (

@@ -1,20 +1,7 @@
 import { useState, useEffect } from "react";
 
-// --- Assets ---
-import bgStreamSunrise from "../../assets/stream-image/bg-stream-sunrise.webp";
-import bgStreamDay from "../../assets/stream-image/bg-stream-day.webp";
-import bgStreamSunset from "../../assets/stream-image/bg-stream-sunset.webp";
-import bgStreamNight from "../../assets/stream-image/bg-stream-night.webp";
-
-import bgStreamSunriseCut from "../../assets/stream-image/bg-stream-sunrise-cut.webp";
-import bgStreamDayCut from "../../assets/stream-image/bg-stream-day-cut.webp";
-import bgStreamSunsetCut from "../../assets/stream-image/bg-stream-sunset-cut.webp";
-import bgStreamNightCut from "../../assets/stream-image/bg-stream-night-cut.webp";
-
-import cityInSunrise from "../../assets/city-in-the-window/city-in-the-window-sunrise.webp";
-import cityInDay from "../../assets/city-in-the-window/city-in-the-window-day.webp";
-import cityInSunset from "../../assets/city-in-the-window/city-in-the-window-sunset.webp";
-import cityInNight from "../../assets/city-in-the-window/city-in-the-window-night.webp";
+import { PROJECTS_DATA } from "../../utils/projects";
+import { getTimePeriod, STREAM_THEME } from "../../utils/themeUtils";
 
 import { AeroLayer } from "../AeroLayer";
 import Sky from "../Sky";
@@ -22,7 +9,6 @@ import Clouds from "../Clouds";
 import Rain from "../Rain";
 import ProjectSidebar from "./ProjectSidebar";
 import ProjectDisplay from "./ProjectDisplay";
-import { PROJECTS_DATA } from "../../utils/projects";
 import DigitalClock from "./DigitalClock";
 import NeonsAndLights from "./NeonsAndLights";
 import { AeronauticalSignalingLight } from "./AeronauticalSignalingLight";
@@ -53,25 +39,8 @@ export default function Stream({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const getTheme = () => {
-    if (hour >= 5 && hour < 7)
-      return {
-        bg: bgStreamSunrise,
-        bgCut: bgStreamSunriseCut,
-        city: cityInSunrise,
-      };
-    if (hour >= 7 && hour < 16)
-      return { bg: bgStreamDay, bgCut: bgStreamDayCut, city: cityInDay };
-    if (hour >= 16 && hour < 18)
-      return {
-        bg: bgStreamSunset,
-        bgCut: bgStreamSunsetCut,
-        city: cityInSunset,
-      };
-    return { bg: bgStreamNight, bgCut: bgStreamNightCut, city: cityInNight };
-  };
-
-  const theme = getTheme();
+  const period = getTimePeriod(hour);
+  const theme = STREAM_THEME[period];
   const bgImg = isMobile && theme.bgCut ? theme.bgCut : theme.bg;
 
   return (

@@ -1,19 +1,6 @@
 import { useState, useEffect } from "react";
 
-import bgWorkspaceSunrise from "../../assets/workspace-image/bg-workspace-sunrise.webp";
-import bgWorkspaceDay from "../../assets/workspace-image/bg-workspace-day.webp";
-import bgWorkspaceSunset from "../../assets/workspace-image/bg-workspace-sunset.webp";
-import bgWorkspaceNight from "../../assets/workspace-image/bg-workspace-night.webp";
-
-import bgWorkspaceSunriseCut from "../../assets/workspace-image/bg-workspace-sunrise-cut.webp";
-import bgWorkspaceDayCut from "../../assets/workspace-image/bg-workspace-day-cut.webp";
-import bgWorkspaceSunsetCut from "../../assets/workspace-image/bg-workspace-sunset-cut.webp";
-import bgWorkspaceNightCut from "../../assets/workspace-image/bg-workspace-night-cut.webp";
-
-import cityInSunrise from "../../assets/city-in-the-window/city-in-the-window-sunrise.webp";
-import cityInDay from "../../assets/city-in-the-window/city-in-the-window-day.webp";
-import cityInSunset from "../../assets/city-in-the-window/city-in-the-window-sunset.webp";
-import cityInNight from "../../assets/city-in-the-window/city-in-the-window-night.webp";
+import { getTimePeriod, WORKSPACE_THEME } from "../../utils/themeUtils";
 
 import EditorInterface from "./EditorInterface";
 import { RetroTerminal } from "./RetroTerminal";
@@ -31,35 +18,6 @@ interface WorkspaceProps {
   rainIntensity: "low" | "medium" | "storm";
 }
 
-interface Theme {
-  workspace: string;
-  workspaceCut: string;
-  city: string;
-}
-
-const THEME_CONFIG: Record<string, Theme> = {
-  sunrise: {
-    workspace: bgWorkspaceSunrise,
-    workspaceCut: bgWorkspaceSunriseCut,
-    city: cityInSunrise,
-  },
-  day: {
-    workspace: bgWorkspaceDay,
-    workspaceCut: bgWorkspaceDayCut,
-    city: cityInDay,
-  },
-  sunset: {
-    workspace: bgWorkspaceSunset,
-    workspaceCut: bgWorkspaceSunsetCut,
-    city: cityInSunset,
-  },
-  night: {
-    workspace: bgWorkspaceNight,
-    workspaceCut: bgWorkspaceNightCut,
-    city: cityInNight,
-  },
-};
-
 export default function Workspace({
   hour,
   isRaining,
@@ -74,17 +32,10 @@ export default function Workspace({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const getTheme = () => {
-    if (hour >= 5 && hour < 7) return THEME_CONFIG.sunrise;
-    if (hour >= 7 && hour < 16) return THEME_CONFIG.day;
-    if (hour >= 16 && hour < 18) return THEME_CONFIG.sunset;
-    return THEME_CONFIG.night;
-  };
-
-  const theme = getTheme();
+  const period = getTimePeriod(hour);
+  const theme = WORKSPACE_THEME[period];
   // Se for mobile e existir versão cortada, usa ela, senão usa a normal
-  const workspaceImg =
-    isMobile && theme.workspaceCut ? theme.workspaceCut : theme.workspace;
+  const workspaceImg = isMobile && theme.bgCut ? theme.bgCut : theme.bg;
 
   return (
     <section

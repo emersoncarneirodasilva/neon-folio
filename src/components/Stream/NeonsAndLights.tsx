@@ -50,12 +50,12 @@ export default function NeonsAndLights({ hour }: NeonsAndLightsProps) {
 
       {/* 4. GLOW ROSA (DIREITA) */}
       <div
-        className="neon-layer bg-pink-500/60 blur-[25px] animate-neon-pulse"
+        className="neon-layer bg-pink-500/60 blur-[20px] animate-neon-pulse"
         style={{
           mixBlendMode: "screen",
           borderRadius: "0%",
-          top: "24%",
-          left: "88.8%",
+          top: "22%",
+          left: "89.5%",
           width: "4.5%",
           height: "4.5%",
         }}
@@ -67,8 +67,8 @@ export default function NeonsAndLights({ hour }: NeonsAndLightsProps) {
         style={{
           mixBlendMode: "screen",
           borderRadius: "10%",
-          top: "44.5%",
-          left: "89.1%",
+          top: "42.9%",
+          left: "89.8%",
           width: "3.4%",
           height: "7%",
         }}
@@ -76,12 +76,12 @@ export default function NeonsAndLights({ hour }: NeonsAndLightsProps) {
 
       {/* 6. GLOW ROXO (DIREITA) */}
       <div
-        className="neon-layer bg-purple-400/40 blur-[20px] animate-neon-flicker"
+        className="neon-layer bg-purple-400/40 blur-[30px] animate-neon-flicker"
         style={{
           mixBlendMode: "screen",
           borderRadius: "0%",
-          top: "54.7%",
-          left: "84.5%",
+          top: "53%",
+          left: "85.3%",
           width: "7%",
           height: "6%",
         }}
@@ -93,8 +93,8 @@ export default function NeonsAndLights({ hour }: NeonsAndLightsProps) {
         style={{
           mixBlendMode: "screen",
           borderRadius: "30%",
-          top: "62.5%",
-          left: "85.5%",
+          top: "62%",
+          left: "86%",
           width: "5%",
           height: "10%",
         }}
@@ -106,10 +106,10 @@ export default function NeonsAndLights({ hour }: NeonsAndLightsProps) {
         style={{
           mixBlendMode: "screen",
           borderRadius: "0%",
-          top: "66.5%",
+          top: "65%",
           left: "93%",
-          width: "2%",
-          height: "6.6%",
+          width: "2.5%",
+          height: "7%",
         }}
       />
 

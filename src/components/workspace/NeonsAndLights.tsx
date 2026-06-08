@@ -42,8 +42,8 @@ export default function NeonsAndLights({ hour }: NeonsAndLightsProps) {
         style={{
           mixBlendMode: "screen",
           borderRadius: "0%",
-          top: "35%",
-          left: "14.2%",
+          top: "33%",
+          left: "13.4%",
           width: "1.7%",
           height: "2.8%",
         }}
@@ -55,48 +55,36 @@ export default function NeonsAndLights({ hour }: NeonsAndLightsProps) {
         style={{
           mixBlendMode: "screen",
           borderRadius: "0%",
-          top: "41%",
-          left: "18.35%",
-          width: "0.5%",
-          height: "7%",
+          top: "39.5%",
+          left: "17.6%",
+          width: "0.6%",
+          height: "6.6%",
         }}
       />
 
-      {/* 5. GLOW ROXO (DIREITA) */}
+      {/* 5. GLOW VERDE (ESQUERDA) */}
+      <div
+        className="neon-layer bg-teal-600/60 blur-[15px] animate-neon-pulse"
+        style={{
+          mixBlendMode: "screen",
+          borderRadius: "30%",
+          top: "52.2%",
+          left: "15%",
+          width: "4.5%",
+          height: "2%",
+        }}
+      />
+
+      {/* 6. GLOW ROXO (DIREITA) */}
       <div
         className="neon-layer bg-purple-400/60 blur-[20px] animate-neon-flicker"
         style={{
           mixBlendMode: "screen",
           borderRadius: "0%",
-          top: "46%",
-          left: "84.5%",
-          width: "2.6%",
+          top: "44%",
+          left: "85.1%",
+          width: "2%",
           height: "7.5%",
-        }}
-      />
-
-      {/* LETREIRO (DIREITA) */}
-      <div
-        className="neon-layer bg-white/60 blur-[15px] animate-neon-pulse"
-        style={{
-          mixBlendMode: "screen",
-          borderRadius: "0%",
-          top: "40.4%",
-          left: "80.5%",
-          width: "0.7%",
-          height: "3%",
-        }}
-      />
-
-      <div
-        className="neon-layer bg-red-600/85 blur-[6px] animate-neon-flicker-intense"
-        style={{
-          mixBlendMode: "screen",
-          borderRadius: "0%",
-          top: "39%",
-          left: "80.5%",
-          width: "0.8%",
-          height: "1.7%",
         }}
       />
 
