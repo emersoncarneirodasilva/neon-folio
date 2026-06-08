@@ -4,10 +4,10 @@ import { useHour } from "./hooks/useHour";
 import { useRainCycle } from "./hooks/useRainCycle";
 import { useParallaxTransforms } from "./hooks/useParallaxTransforms";
 import { ErrorBoundary } from "./components/ErrorBoundary";
-import Hero from "./components/Hero";
-import Workspace from "./components/Workspace";
-import Stream from "./components/Stream";
-import Uplink from "./components/Uplink";
+import Hero from "./components/Hero/index";
+import Workspace from "./components/Workspace/index";
+import Stream from "./components/Stream/index";
+import Uplink from "./components/Uplink/index";
 
 function AppContent() {
   const hour = useHour();
