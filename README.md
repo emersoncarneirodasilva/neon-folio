@@ -1,4 +1,4 @@
-# neon-folio
+# NeonFolio
 
 Uma experiência de portfolio cyberpunk imersiva construída com React, TypeScript e animações sofisticadas. O projeto apresenta uma estética neon dinâmica que muda ao longo do dia, com cenas interativas, efeitos de chuva em tempo real e parallax suave.
 
