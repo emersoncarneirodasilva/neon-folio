@@ -1,16 +1,10 @@
+import type { Project } from "../types";
 import lumeStudioImage from "../assets/stream-image/lume-studio-image.webp";
 import beautimeAdminImage from "../assets/stream-image/beautime-admin-image.webp";
 import neonwaveImage from "../assets/stream-image/neonwave-image.webp";
 import weatherAppImage from "../assets/stream-image/weather-app-image.webp";
 
-export interface Project {
-  id: number;
-  title: string;
-  preview: string;
-  description: string;
-  techs: string[];
-  links: { live: string; github: string };
-}
+export type { Project };
 
 export const PROJECTS_DATA: Project[] = [
   {

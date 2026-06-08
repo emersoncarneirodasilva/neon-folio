@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import type { UplinkProps } from "../../types";
 import { getTimePeriod, UPLINK_THEME } from "../../utils/themeUtils";
 
 import { AeroLayer } from "../AeroLayer";
@@ -9,12 +9,6 @@ import Rain from "../Rain";
 import TerminalDisplay from "./TerminalDisplay";
 import NeonsAndLights from "./NeonsAndLights";
 import { AeronauticalSignalingLight } from "./AeronauticalSignalingLight";
-
-interface UplinkProps {
-  hour: number;
-  isRaining: boolean;
-  rainIntensity: "low" | "medium" | "storm";
-}
 
 export default function Uplink({
   hour,

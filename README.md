@@ -1,74 +1,284 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
 # neon-folio
+
+Uma experiência de portfolio cyberpunk imersiva construída com React, TypeScript e animações sofisticadas. O projeto apresenta uma estética neon dinâmica que muda ao longo do dia, com cenas interativas, efeitos de chuva em tempo real e parallax suave.
+
+## 🎨 Características
+
+- **Temas Dinâmicos por Hora**: A aparência visual muda em tempo real com 4 períodos do dia (sunrise, day, sunset, night)
+- **Animações Sofisticadas**: Parallax suave com spring physics, efeitos de raio em tempestades
+- **Chuva Interativa**: Sistema de ciclo climático com intensidade variável (low, medium, storm)
+- **Responsividade Completa**: Design mobile-first com breakpoints otimizados (425px, 768px)
+- **TypeScript Rigoroso**: Tipagem completa com modo strict ativado
+- **Otimizado para Performance**: GPU acceleration, memoization eficiente, sem memory leaks
+
+## 🚀 Tecnologias
+
+- **React 19.2.6** - UI framework moderno
+- **TypeScript 6.0.2** - Type safety
+- **Vite 8.0.12** - Build tool de alta performance
+- **Tailwind CSS 4.3.0** - Styling utilitário
+- **Framer Motion 12.40.0** - Animações avançadas
+- **Lucide Icons 1.16.0** - Biblioteca de ícones SVG
+
+## 📦 Setup & Desenvolvimento
+
+### Instalação
+
+```bash
+npm install
+```
+
+### Desenvolvimento
+
+```bash
+npm run dev
+```
+
+Abre [http://localhost:5173](http://localhost:5173) com HMR habilitado.
+
+### Build
+
+```bash
+npm run build
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+### Preview
+
+```bash
+npm run preview
+```
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── components/          # Componentes React organizados por feature
+│   ├── Hero/           # Seção inicial com sky e clouds
+│   ├── Stream/         # Galeria de projetos
+│   ├── Uplink/         # Terminal interativo
+│   ├── Workspace/      # Editor de código e retrograde
+│   ├── ErrorBoundary.tsx # Tratamento de erros
+│   └── ...
+├── hooks/              # Custom hooks reutilizáveis
+│   ├── useHour.ts      # Rastreamento de hora em tempo real
+│   ├── useRainCycle.ts # Simulação de ciclo climático
+│   └── useParallaxTransforms.ts # Efeito parallax dinâmico
+├── types/              # Tipos TypeScript centralizados
+│   └── index.ts        # Interface definitions
+├── utils/              # Funções utilitárias e constantes
+│   ├── projects.ts     # Dados de projetos
+│   ├── themeUtils.ts   # Temas e períodos de tempo
+│   └── editorData.ts   # Configuração do editor
+├── assets/             # Imagens organizadas por seção
+├── App.tsx             # Componente raiz
+├── main.tsx            # Ponto de entrada
+└── index.css           # Estilos globais
+```
+
+## 🎯 Documentação de Hooks
+
+### `useHour()`
+
+Rastreia a hora atual em tempo real com precisão até segundos.
+
+```typescript
+/**
+ * Retorna a hora atual como número decimal (0-24)
+ * Ex: 14.5 = 14:30:00
+ */
+const hour = useHour();
+```
+
+**Uso**: Determina o tema visual baseado na hora do dia.
+
+---
+
+### `useRainCycle()`
+
+Simula um ciclo climático realista com períodos aleatórios de chuva e seco.
+
+```typescript
+/**
+ * Gerencia o estado de chuva com intensidade variável
+ * @returns {Object} { intensity, isRaining }
+ * - intensity: "low" | "medium" | "storm"
+ * - isRaining: boolean
+ */
+const { intensity, isRaining } = useRainCycle();
+```
+
+**Lógica**:
+
+- Inicia com 15s de espera
+- Alterna entre períodos secos (30-90s) e chuva (30-60s)
+- Intensidade aleatória com probabilidade: 40% low, 40% medium, 20% storm
+
+---
+
+### `useParallaxTransforms(heroRef, workspaceRef)`
+
+Cria um efeito parallax sofisticado com spring physics integrado ao Framer Motion.
+
+```typescript
+/**
+ * Calcula transforms de parallax baseados em scroll
+ * @param heroContainerRef - Referência ao container hero
+ * @param workspaceContainerRef - Referência ao container workspace
+ * @returns { workspaceY, streamTotalY } Motion values
+ */
+const { workspaceY, streamTotalY } = useParallaxTransforms(
+  heroRef,
+  workspaceRef,
+);
+```
+
+**Recursos**:
+
+- Spring physics suave (damping: 15, stiffness: 100)
+- Responsivo (mobile: -0.2x, desktop: -0.4x)
+- Sincronização com `useLayoutEffect`
+
+---
+
+## 🎯 Documentação de Componentes
+
+### Componentes de Seção
+
+Todos os componentes principais (`Hero`, `Stream`, `Uplink`, `Workspace`) seguem a mesma interface:
+
+```typescript
+interface SectionProps {
+  hour: number; // Hora atual (0-24)
+  isRaining: boolean; // Estado de chuva
+  rainIntensity: RainIntensity; // "low" | "medium" | "storm"
+}
+```
+
+---
+
+### Component: Sky
+
+Renderiza o céu com efeitos de raio dinâmicos durante tempestades.
+
+**Features**:
+
+- Lightning aleatório em períodos de storm (20-40% de chance)
+- Cores adaptadas conforme hora do dia
+- Cleanup automático de timers
+
+```typescript
+<Sky hour={14} isRaining={true} rainIntensity="storm" />
+```
+
+---
+
+### Component: Clouds
+
+Nuvens geradas proceduralmente com cores adaptadas ao clima.
+
+**Features**:
+
+- 5 nuvens por renderização com posições aleatórias
+- Cores mais escuras durante chuva
+- Animações CSS otimizadas
+
+---
+
+### Component: Rain
+
+Simulação de chuva com 3 camadas de gradientes para profundidade.
+
+**Configurações por Intensidade**:
+
+- `low`: 20% opacidade, velocidade 0.55s
+- `medium`: 40% opacidade, velocidade 0.35s
+- `storm`: 65% opacidade, velocidade 0.18s
+
+---
+
+### Component: ErrorBoundary
+
+Tratamento de erros com fallback UI amigável.
+
+**Features**:
+
+- Captura erros de rendering de componentes
+- Exibe UI em modo escuro (tema neon)
+- Botão para recarregar página
+- Mostra stack trace em desenvolvimento
+
+```typescript
+<ErrorBoundary>
+  <App />
+</ErrorBoundary>
+```
+
+---
+
+## 🔍 Tipos Centralizados
+
+Todos os tipos estão em `src/types/index.ts`:
+
+```typescript
+// Tipo para intensidade de chuva
+type RainIntensity = "low" | "medium" | "storm";
+
+// Interface base para componentes de seção
+interface SectionProps {
+  hour: number;
+  isRaining: boolean;
+  rainIntensity: RainIntensity;
+}
+
+// Interface para projetos
+interface Project {
+  id: number;
+  title: string;
+  preview: string;
+  description: string;
+  techs: string[];
+  links: { live: string; github: string };
+}
+```
+
+---
+
+## ⚙️ Configuração TypeScript
+
+O projeto utiliza TypeScript com modo strict:
+
+```json
+{
+  "compilerOptions": {
+    "target": "es2023",
+    "jsx": "react-jsx",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "strict": true
+  }
+}
+```
+
+---
+
+## 🛡️ Boas Práticas Implementadas
+
+✅ **Type Safety**: Sem `any`, interfaces em tudo  
+✅ **Performance**: Memoization, GPU acceleration, cleanup de effects  
+✅ **Modularidade**: Componentes isolados, responsabilidade única  
+✅ **Responsividade**: Mobile-first, breakpoints 425px e 768px  
+✅ **Error Handling**: Error Boundary para segurança  
+✅ **Code Quality**: ESLint + TypeScript strict mode
+
+---
+
+## 📝 Licença
+
+MIT

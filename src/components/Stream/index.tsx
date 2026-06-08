@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import type { StreamProps } from "../../types";
 import { PROJECTS_DATA } from "../../utils/projects";
 import { getTimePeriod, STREAM_THEME } from "../../utils/themeUtils";
 
@@ -12,12 +12,6 @@ import ProjectDisplay from "./ProjectDisplay";
 import DigitalClock from "./DigitalClock";
 import NeonsAndLights from "./NeonsAndLights";
 import { AeronauticalSignalingLight } from "./AeronauticalSignalingLight";
-
-interface StreamProps {
-  hour: number;
-  isRaining: boolean;
-  rainIntensity: "low" | "medium" | "storm";
-}
 
 export default function Stream({
   hour,

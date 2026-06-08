@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-
-export type RainIntensity = "low" | "medium" | "storm";
+import type { RainIntensity } from "../types";
 
 const getRandomDuration = (min: number, max: number) =>
   Math.floor(Math.random() * (max - min + 1)) + min;

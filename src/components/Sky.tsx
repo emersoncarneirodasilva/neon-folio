@@ -1,10 +1,5 @@
 import { useMemo, useState, useEffect, useRef } from "react";
-
-interface SkyProps {
-  hour: number;
-  isRaining: boolean;
-  rainIntensity: "low" | "medium" | "storm";
-}
+import type { SkyProps } from "../types";
 
 export default function Sky({
   hour,

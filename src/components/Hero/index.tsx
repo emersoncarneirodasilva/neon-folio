@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import type { HeroProps } from "../../types";
 import { getTimePeriod, HERO_THEME } from "../../utils/themeUtils";
 
 import { AeroLayer } from "../AeroLayer";
@@ -10,12 +10,6 @@ import Billboard from "./Billboard";
 import { AeronauticalSignalingLight } from "./AeronauticalSignalingLight";
 import { AeronauticalSignalingLightCut } from "./AeronauticalSignalingLightCut";
 import NeonBuildingLights from "./NeonBuildingLights";
-
-interface HeroProps {
-  hour: number;
-  isRaining: boolean;
-  rainIntensity: "low" | "medium" | "storm";
-}
 
 export default function Hero({ hour, isRaining, rainIntensity }: HeroProps) {
   const [isUltraMobile, setIsUltraMobile] = useState(false);

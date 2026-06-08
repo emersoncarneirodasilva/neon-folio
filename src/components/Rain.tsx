@@ -1,6 +1,4 @@
-interface RainProps {
-  intensity: "low" | "medium" | "storm";
-}
+import type { RainProps } from "../types";
 
 export default function Rain({ intensity }: RainProps) {
   const configurations = {

@@ -1,19 +1,5 @@
 import { useMemo } from "react";
-
-interface CloudsProps {
-  hour: number;
-  isRaining: boolean;
-}
-
-interface CloudConfig {
-  id: number;
-  top: string;
-  duration: string;
-  delay: string;
-  scale: string;
-  width: string;
-  height: string;
-}
+import type { CloudsProps, CloudConfig } from "../types";
 
 export default function Clouds({ hour, isRaining }: CloudsProps) {
   const isNight = hour >= 18 || hour < 6;

@@ -3,12 +3,13 @@ import { motion } from "framer-motion";
 import { useHour } from "./hooks/useHour";
 import { useRainCycle } from "./hooks/useRainCycle";
 import { useParallaxTransforms } from "./hooks/useParallaxTransforms";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 import Hero from "./components/Hero";
 import Workspace from "./components/Workspace";
 import Stream from "./components/Stream";
 import Uplink from "./components/Uplink";
 
-export default function App() {
+function AppContent() {
   const hour = useHour();
   const { intensity, isRaining } = useRainCycle();
 
@@ -53,5 +54,13 @@ export default function App() {
         </div>
       </motion.div>
     </main>
+  );
+}
+
+export default function App() {
+  return (
+    <ErrorBoundary>
+      <AppContent />
+    </ErrorBoundary>
   );
 }

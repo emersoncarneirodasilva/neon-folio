@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import type { WorkspaceProps } from "../../types";
 import { getTimePeriod, WORKSPACE_THEME } from "../../utils/themeUtils";
 
 import EditorInterface from "./EditorInterface";
@@ -11,12 +11,6 @@ import Clouds from "../Clouds";
 import Rain from "../Rain";
 import NeonsAndLights from "./NeonsAndLights";
 import { AeronauticalSignalingLight } from "./AeronauticalSignalingLight";
-
-interface WorkspaceProps {
-  hour: number;
-  isRaining: boolean;
-  rainIntensity: "low" | "medium" | "storm";
-}
 
 export default function Workspace({
   hour,
