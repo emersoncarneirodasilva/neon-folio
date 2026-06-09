@@ -7,6 +7,7 @@ import {
   GitBranch,
   BugPlay,
 } from "lucide-react";
+import { VscVscode } from "react-icons/vsc";
 import { activityBarItems, filesList } from "../../utils/editorData";
 import { FileContentRenderer } from "./FileContentRenderer";
 
@@ -32,7 +33,7 @@ export default function EditorInterface() {
       {/* Header: Adicionado 'overflow-hidden' e 'truncate' no container de texto */}
       <header className="h-6 md:h-8 shrink-0 border-b border-cyan-500/10 flex items-center justify-between px-2 bg-[#050505] text-gray-400">
         <div className="flex items-center gap-3 overflow-hidden">
-          <div className="w-3 h-3 bg-cyan-600 rounded-full shrink-0" />
+          <VscVscode className="w-4 h-4 text-cyan-500 shrink-0" />
           <div className="hidden md:flex gap-3 truncate">
             {["Arquivo", "Editar", "Seleção", "Exibir"].map((i) => (
               <span
