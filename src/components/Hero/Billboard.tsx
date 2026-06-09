@@ -64,8 +64,8 @@ export default function Billboard({ isMobile }: BillboardProps) {
       </div>
 
       <a
-        href="/Emerson_Carneiro_da_Silva_Curriculo.pdf"
-        download="Emerson_Carneiro_da_Silva_Curriculo.pdf"
+        href="/Curriculo_Emerson_Carneiro_da_Silva.pdf"
+        download="Curriculo_Emerson_Carneiro_da_Silva.pdf"
         className="mt-6 px-4 py-1 border border-neon-cyan text-neon-cyan font-cyber-terminal text-[8px] md:text-[12px] uppercase tracking-[0.2em] hover:bg-neon-cyan/20 hover:text-white transition-all cursor-pointer pointer-events-auto"
       >
         [ DOWNLOAD_CV.EXE ]

@@ -7,7 +7,6 @@ import {
   GitBranch,
 } from "lucide-react";
 
-// Aqui você pode criar o componente de ícone do Git se quiser centralizar tudo
 export const filesList = [
   { id: "about", label: "About.tsx", icon: FileCode2, color: "text-blue-400" },
   {
@@ -27,7 +26,7 @@ export const filesList = [
 export const activityBarItems = [
   { id: "explorador", icon: Files },
   { id: "pesquisa", icon: Search },
-  { id: "git", icon: GitBranch }, // Você pode usar o padrão do Lucide ou o seu custom
+  { id: "git", icon: GitBranch },
   { id: "debug", icon: BugPlay },
   { id: "extensoes", icon: Blocks },
 ];

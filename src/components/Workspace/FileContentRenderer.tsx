@@ -50,7 +50,7 @@ export const FileContentRenderer = ({ activeTab }: { activeTab: string }) => {
         <div className="pl-12 text-[#9CDCFE]">{"</p>"}</div>
         <div className="pl-12 text-[#9CDCFE]">{"<p>"}</div>
         <div className="pl-16 text-gray-300">
-          Este portfólio, o <span className="text-[#CE9178]">Neon-Folio</span>,
+          Este portfólio, o <span className="text-[#CE9178]">NeonFolio</span>,
           reflete minha busca por
         </div>
         <div className="pl-16 text-gray-300">
