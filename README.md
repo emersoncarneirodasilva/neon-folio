@@ -2,6 +2,24 @@
 
 Uma experiência de portfolio cyberpunk imersiva construída com React, TypeScript e animações sofisticadas. O projeto apresenta uma estética neon dinâmica que muda ao longo do dia, com cenas interativas, efeitos de chuva em tempo real e parallax suave.
 
+---
+
+## 🖥️ Preview do Sistema: Arquitetura de Componentes
+
+Explore as quatro seções principais que compõem o ecossistema do **NeonFolio**, todas renderizadas na estética *Night Mode*.
+
+| **01. Hero Section** | **02. Workspace Section** |
+| :---: | :---: |
+| <img src="https://github.com/user-attachments/assets/ad846a3b-1a32-421e-bab0-a8aa8e3222f0" width="450" /> | <img src="https://github.com/user-attachments/assets/d29b3611-118e-40ee-9c00-bc667496e35a" width="450" /> |
+| *Céu dinâmico, nuvens e controle climático.* | *Editor de código/Workspace interativo.* |
+
+| **03. Stream Section** | **04. Uplink Section** |
+| :---: | :---: |
+| <img src="https://github.com/user-attachments/assets/6dd1d72e-6eb8-4282-a4e4-9187f8a82eec" width="450" /> | <img src="https://github.com/user-attachments/assets/1be1486f-13b0-49b8-8ece-01c1e9f1896f" width="450" /> |
+| *Galeria de projetos em fluxo cyberpunk.* | *Terminal interativo e Retrograde.* |
+
+---
+
 ## 🎨 Características
 
 - **Temas Dinâmicos por Hora**: A aparência visual muda em tempo real com 4 períodos do dia (sunrise, day, sunset, night)
