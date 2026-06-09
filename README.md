@@ -4,19 +4,30 @@ Uma experiência de portfolio cyberpunk imersiva construída com React, TypeScri
 
 ---
 
-## 🖥️ Preview do Sistema: Arquitetura de Componentes
+## 🖥️ Preview do Sistema
 
-Explore as quatro seções principais que compõem o ecossistema do **NeonFolio**, todas renderizadas na estética *Night Mode*.
-
+### Arquitetura de Componentes (Night Mode)
 | **01. Hero Section** | **02. Workspace Section** |
 | :---: | :---: |
 | <img src="https://github.com/user-attachments/assets/ad846a3b-1a32-421e-bab0-a8aa8e3222f0" width="450" /> | <img src="https://github.com/user-attachments/assets/d29b3611-118e-40ee-9c00-bc667496e35a" width="450" /> |
-| *Céu dinâmico, nuvens e controle climático.* | *Editor de código/Workspace interativo.* |
 
 | **03. Stream Section** | **04. Uplink Section** |
 | :---: | :---: |
 | <img src="https://github.com/user-attachments/assets/6dd1d72e-6eb8-4282-a4e4-9187f8a82eec" width="450" /> | <img src="https://github.com/user-attachments/assets/1be1486f-13b0-49b8-8ece-01c1e9f1896f" width="450" /> |
-| *Galeria de projetos em fluxo cyberpunk.* | *Terminal interativo e Retrograde.* |
+
+### Ciclo Dinâmico de Iluminação
+> O sistema ajusta sua paleta de cores e iluminação automaticamente conforme o período do dia.
+
+| Sunrise | Day | Sunset | Night |
+| :---: | :---: | :---: | :---: |
+| <img src="https://github.com/user-attachments/assets/362d3257-0d1a-402b-ab8c-ece13a95bc4d" width="200" /> | <img src="https://github.com/user-attachments/assets/d9f6abc5-8b26-46b8-8e55-906ce90773fe" width="200" /> | <img src="https://github.com/user-attachments/assets/3f159ec2-4d65-4d54-85e7-6076fee80234" width="200" /> | <img src="https://github.com/user-attachments/assets/eb817541-a9c4-48da-a79d-3554ae2d85d2" width="200" /> |
+
+### Sistema Climático (Rain Cycle)
+> Implementação de sistema procedural de chuva com camadas de profundidade e opacidade dinâmica.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/02f588b0-51e4-4b91-8634-f590df7a044f" width="920" />
+</div>
 
 ---
 
